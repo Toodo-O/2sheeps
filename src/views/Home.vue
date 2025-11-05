@@ -575,7 +575,7 @@
                     <button
                       type="submit"
                       :disabled="isSubmitting"
-                      class="w-full px-4 py-3 bg-[#578DFF] text-white rounded-lg font-bold hover:bg-[#4678E6] transition-colors text-sm md:text-base"
+                      class="w-full px-4 py-3 bg-[#578DFF] text-white rounded-lg font-bold hover:bg-[#4678E6] transition-colors text-sm disabled:bg-[#A0C4FF] disabled:cursor-not-allowed md:text-base"
                     >
                       提出します
                     </button>
@@ -592,42 +592,13 @@
 
 <script lang="ts">
 import siteConfig from '../config/site'
-import Team from '@/assets/images/home/team.png'
-import Support from '@/assets/images/home/support.png'
-import Setting from '@/assets/images/home/setting.png'
-import Index from '@/assets/images/home/index.png'
 import { ref } from 'vue'
 
 export default {
   name: 'Home',
   setup() {
     const isSubmitting = ref(false)
-    const Story = [
-      {
-        icon: Team,
-        text: '優れた技術チーム',
-        aos: 'fade-left',
-        aosDelay: 100,
-      },
-      {
-        icon: Support,
-        text: '専門的な技術サポート',
-        aos: 'fade-down',
-        aosDelay: 200,
-      },
-      {
-        icon: Setting,
-        text: 'プロフェッショナルな技術サービス',
-        aos: 'fade-right',
-        aosDelay: 300,
-      },
-      {
-        icon: Index,
-        text: '独自のコアリソース',
-        aos: 'fade-down',
-        aosDelay: 400,
-      },
-    ]
+
     return {
       featuredProjects: siteConfig.featuredProjects,
       latestArticles: siteConfig.latestArticles,
@@ -642,7 +613,6 @@ export default {
         message: '',
         contactMethod: 'どちらでも良い',
       },
-      Story,
       isSubmitting,
     }
   },
