@@ -1,7 +1,7 @@
 <template>
   <header class="sticky top-0 z-50 bg-white shadow-sm">
     <nav
-      class="container flex justify-between items-center max-w-[1366px] py-3 px-4 mx-auto md:px-6"
+      class="container flex items-center max-w-[1366px] py-3 px-4 mx-auto md:px-6"
     >
       <!-- Logo -->
       <router-link to="/" class="flex items-center space-x-2">
@@ -24,14 +24,14 @@
       <!-- 移动端菜单按钮 -->
       <button
         @click="toggleMenu"
-        class="p-2 text-xl text-gray-700 rounded-lg transition-colors md:hidden focus:outline-none hover:bg-gray-100"
+        class="p-2 ml-auto text-xl text-gray-700 rounded-lg transition-colors md:hidden focus:outline-none hover:bg-gray-100"
         aria-label="菜单"
       >
         <i :class="isMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
       </button>
 
-      <!-- 桌面端导航和按钮 -->
-      <div class="hidden gap-4 items-center md:flex">
+      <!-- 桌面端导航（居中） -->
+      <div class="hidden flex-1 gap-4 justify-center items-center md:flex">
         <div class="relative items-center space-x-1 md:flex" ref="navContainer">
           <router-link
             v-for="(item, index) in siteConfig.navItems"
@@ -60,14 +60,15 @@
             :style="dotStyle"
           ></div>
         </div>
-        <div class="bg-[#578DFF] p-[3px] rounded-[6px]">
+        <!-- 右侧CTA（如需显示可取消注释） -->
+        <!-- <div class="bg-[#578DFF] p-[3px] rounded-[6px] ml-4">
           <a
             href="#"
             class="inline-flex items-center px-3 py-2 text-sm text-blue-600 border-[3px] rounded-[3px] border-white bg-[#AFE6FF] hover:bg-blue-50 font-[700]"
           >
             接続拠点を確認する
           </a>
-        </div>
+        </div> -->
       </div>
     </nav>
 
@@ -94,7 +95,7 @@
           </router-link>
           
           <!-- 移动端按钮 -->
-          <div class="p-4 bg-gray-50">
+          <!-- <div class="p-4 bg-gray-50">
             <div class="bg-[#578DFF] p-[2px] rounded-[6px]">
               <a
                 href="#"
@@ -104,7 +105,7 @@
                 接続拠点を確認する
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </transition>
